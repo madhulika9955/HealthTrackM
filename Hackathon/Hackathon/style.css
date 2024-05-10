@@ -1,0 +1,72 @@
+body{
+    background-color: #cad2c5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0%;
+    height: 5000px;
+    
+
+}
+#navbar{
+    width:  1283px;
+    height: 30px;
+    background-color:#d2dbcd;
+    padding: 0%;
+    margin: 0%;
+    border-width: 0px;
+    display: block;
+    position: fixed;
+}
+#icons{
+    width: 1283px ;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: space-between;
+
+    
+}
+#Userdata{
+    display: flex;
+    height: 30px;
+    width: 50px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+
+}
+#information{
+    background-color: #354F52 ;
+    width: 1283px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    justify-content: center;
+}
+.searchbar{
+    border-width: 4px;
+    border: #ecf080;
+    border-radius: 8px;
+    height:40px ;
+    width: 450px;
+    
+}
+#cards{
+    display: flex;
+    height: 700px;
+    width: 1283px;
+    justify-content: space-around;
+    align-items: center;
+    align-self: center;
+
+}
+.box{
+    border-color: #2F3E46;
+    border-width: 5px;
+    border-radius: 7px;
+    height: 100px;
+    width: 100px;
+}
+

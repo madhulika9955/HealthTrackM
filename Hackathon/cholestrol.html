@@ -1,0 +1,80 @@
+Sure, here's a simple example of how you could implement a gauge meter in HTML/CSS to represent different blood pressure ranges with different colors:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Pressure Gauge Meter</title>
+<style>
+  .gauge {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .needle {
+    width: 4px;
+    height: 90px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 50% 100%;
+    transform: translate(-50%, -100%) rotate(90deg);
+    transition: transform 0.5s;
+  }
+  
+  .ranges {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  .range {
+    margin-bottom: 10px;
+  }
+</style>
+</head>
+<body>
+<div class="gauge">
+  <div class="needle" id="needle"></div>
+  <div class="ranges">
+    <div class="range" style="color: green;">Normal: 90-120 mmHg (systolic) / 60-80 mmHg (diastolic)</div>
+    <div class="range" style="color: yellow;">Prehypertension: 120-139 mmHg (systolic) / 80-89 mmHg (diastolic)</div>
+    <div class="range" style="color: orange;">Hypertension Stage 1: 140-159 mmHg (systolic) / 90-99 mmHg (diastolic)</div>
+    <div class="range" style="color: red;">Hypertension Stage 2: ≥160 mmHg (systolic) / ≥100 mmHg (diastolic)</div>
+  </div>
+</div>
+<script>
+  // Get the needle element
+  var needle = document.getElementById('needle');
+  
+  // Function to set the angle of the needle based on the blood pressure value
+  function setNeedleAngle(bloodPressure) {
+    // Normalize blood pressure value to be between 0 and 1
+    var normalizedValue = (bloodPressure - 90) / 70; // Assuming normal range is 90-160
+  
+    // Limit the value between 0 and 1
+    normalizedValue = Math.max(0, Math.min(1, normalizedValue));
+  
+    // Convert the normalized value to an angle between -45 and 45 degrees
+    var angle = -45 + normalizedValue * 90;
+  
+    // Set the transform property of the needle to rotate it to the calculated angle
+    needle.style.transform = 'translate(-50%, -100%) rotate(' + angle + 'deg)';
+  }
+  
+  // Example usage: Set the needle angle for a blood pressure of 120 mmHg
+  setNeedleAngle(120);
+</script>
+</body>
+</html>
